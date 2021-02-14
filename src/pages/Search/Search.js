@@ -26,7 +26,7 @@ export const Search = () => {
         <TextInput
           id="TextInput-4"
           label="Digite um texto para a sua busca!"
-          autocomplete="off"
+          autoComplete="off"
           value={inputValue}
           onChange={({ target }) => setInputValue(target.value)}
         />

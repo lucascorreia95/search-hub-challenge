@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import parse from "parse-link-header";
 import {
   Button,
   Row,
@@ -8,16 +9,19 @@ import {
   CardTitle,
   Pagination,
   Icon,
+  Preloader,
 } from "react-materialize";
 
 import api from "../../../../services/github";
 import { useRootContext, DispatchTypes } from "../../../../store";
 
-import { Container } from "./Result.styles";
+import { Container, LoadingContainer } from "./Result.styles";
 
 export const Result = () => {
   const { state, dispatch } = useRootContext();
   const [results, setResults] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [totalPages, setTotalPages] = useState(1);
   const [pageSize] = useState(12);
   const history = useHistory();
 
@@ -37,7 +41,9 @@ export const Result = () => {
 
   useEffect(() => {
     const getResults = async () => {
-      const response = await api.get("search/users", {
+      setIsLoading(true);
+
+      const { data, headers } = await api.get("search/users", {
         params: {
           q: state.inputValue,
           page: state.page,
@@ -45,8 +51,14 @@ export const Result = () => {
         },
       });
 
-      console.log(response);
-      setResults(response.data);
+      const pagination = parse(headers.link);
+
+      if (pagination && pagination.last) {
+        setTotalPages(Number(pagination.last.page));
+      }
+
+      setResults(data);
+      setIsLoading(false);
     };
 
     if (state.inputValue) {
@@ -54,8 +66,16 @@ export const Result = () => {
     }
   }, [pageSize, state.inputValue, state.page]);
 
-  if (!results) {
+  if (!isLoading && !results) {
     return null;
+  }
+
+  if (isLoading) {
+    return (
+      <LoadingContainer>
+        <Preloader active color="blue" flashing={false} size="big" />
+      </LoadingContainer>
+    );
   }
 
   return (
@@ -63,7 +83,7 @@ export const Result = () => {
       <Row>
         {results.items.length > 0 &&
           results.items.map((item) => (
-            <Col xl={3} l={4} m={6} s={12}>
+            <Col key={item.id} xl={3} l={4} m={6} s={12}>
               <Card
                 header={
                   <CardTitle image={item.avatar_url}>{item.login}</CardTitle>
@@ -83,7 +103,7 @@ export const Result = () => {
       </Row>
       <Pagination
         activePage={state.page}
-        items={results.total_count / pageSize}
+        items={totalPages}
         maxButtons={5}
         leftBtn={<Icon>chevron_left</Icon>}
         rightBtn={<Icon>chevron_right</Icon>}
