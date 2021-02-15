@@ -1,14 +1,17 @@
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Search from "./pages/Search";
-import User from "./pages/User";
+const Search = lazy(() => import("./pages/Search"));
+const User = lazy(() => import("./pages/User"));
 
 export const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Search} />
-        <Route path="/user/:login" children={<User />} />
+        <Suspense fallback={<div />}>
+          <Route path="/" exact component={Search} />
+          <Route path="/user/:login" children={<User />} />
+        </Suspense>
       </Switch>
     </BrowserRouter>
   );
