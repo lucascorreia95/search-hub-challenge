@@ -5,18 +5,18 @@ export const Title = styled.h1`
   position: absolute;
   top: 0;
   left: 15px;
-  color: white;
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const ButtonStyled = styled(Button)`
   position: absolute;
   top: 5px;
   left: 15px;
-  color: #3c3c3c;
+  color: ${(props) => props.theme.colors.darkGrey};
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #efefef;
+  background-color: ${(props) => props.theme.colors.grey};
 `;
 
 export const UserContainer = styled.div`
