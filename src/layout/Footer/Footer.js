@@ -1,24 +1,28 @@
-import { Container, Link } from "./Footer.styles";
+import { Container, Link, Text } from "./Footer.styles";
 
 export const Footer = () => {
   return (
     <Container>
-      Desenvolvido por
-      <Link
-        href="https://github.com/lucascorreia95"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Lucas Correia
-      </Link>
-      - FEV./2021 -
-      <Link
-        href="https://github.com/lucascorreia95/search-hub-callenge"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Link do repositório
-      </Link>
+      <Text data-testid="footer-text-content">
+        Desenvolvido por
+        <Link
+          href="https://github.com/lucascorreia95"
+          target="_blank"
+          rel="noreferrer"
+          data-testid="footer-link-github"
+        >
+          Lucas Correia
+        </Link>
+        - FEV./2021 -
+        <Link
+          href="https://github.com/lucascorreia95/search-hub-callenge"
+          target="_blank"
+          rel="noreferrer"
+          data-testid="footer-link-repository"
+        >
+          Link do repositório
+        </Link>
+      </Text>
     </Container>
   );
 };

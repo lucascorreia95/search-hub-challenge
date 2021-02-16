@@ -8,6 +8,8 @@ export const Container = styled.div`
   text-align: center;
 `;
 
+export const Text = styled.p``;
+
 export const Link = styled.a`
   font-weight: bold;
   margin: 0 3px;

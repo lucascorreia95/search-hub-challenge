@@ -22,10 +22,11 @@ export const ResultItem = ({ item, type }) => {
             <CardTitle image={item.owner.avatar_url}>{item.name}</CardTitle>
           }
           actions={[
-            <a href={item.html_url} target="_blank" rel="noreferrer">
+            <a key={1} href={item.html_url} target="_blank" rel="noreferrer">
               Abrir repositório
             </a>,
             <Link
+              key={2}
               to={{
                 pathname: "/user/" + item.owner.login,
                 params: item.owner.login,
