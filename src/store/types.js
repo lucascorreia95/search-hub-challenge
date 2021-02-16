@@ -1,4 +1,4 @@
 export const DispatchTypes = {
-  InputValue: "SET_INPUT_VALUE",
+  SearchParams: "SET_SEARCH_PARAMS",
   Page: "SET_PAGE",
 };

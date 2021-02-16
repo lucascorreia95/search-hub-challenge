@@ -1,21 +1,23 @@
 import { useState } from "react";
-import { TextInput, Button, Icon } from "react-materialize";
+import { TextInput, Button, Icon, RadioGroup } from "react-materialize";
 
 import githubImg from "../../asset/img/github-mark.png";
 import { DispatchTypes, useRootContext } from "../../store";
 import Result from "./components/Result";
 
-import { Container, Image } from "./Search.styles";
+import { Container, Image, RadioContainer } from "./Search.styles";
 
 export const Search = () => {
-  const [inputValue, setInputValue] = useState("");
-  const { dispatch } = useRootContext();
+  const { state, dispatch } = useRootContext();
+  const [inputValue, setInputValue] = useState(state.inputValue || "");
+  const [radioValue, setRadioValue] = useState(state.radioValue || "users");
 
-  const handleClick = () =>
+  const handleClickSearchButton = () =>
     dispatch({
-      type: DispatchTypes.InputValue,
+      type: DispatchTypes.SearchParams,
       payload: {
         inputValue,
+        radioValue,
       },
     });
 
@@ -30,7 +32,29 @@ export const Search = () => {
           value={inputValue}
           onChange={({ target }) => setInputValue(target.value)}
         />
-        <Button node="button" type="submit" waves="light" onClick={handleClick}>
+        <RadioContainer>
+          <RadioGroup
+            options={[
+              {
+                label: "Usuários",
+                value: "users",
+              },
+              {
+                label: "Repositórios",
+                value: "repositories",
+              },
+            ]}
+            value={radioValue}
+            onChange={({ target }) => setRadioValue(target.value)}
+            withGap
+          />
+        </RadioContainer>
+        <Button
+          node="button"
+          type="submit"
+          waves="light"
+          onClick={handleClickSearchButton}
+        >
           Buscar
           <Icon right>search</Icon>
         </Button>
