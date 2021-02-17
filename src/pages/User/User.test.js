@@ -3,6 +3,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { Route, Switch, MemoryRouter, Router, Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 import 'materialize-css';
 

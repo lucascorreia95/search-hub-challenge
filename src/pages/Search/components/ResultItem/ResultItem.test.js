@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import 'materialize-css';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 import { Router, Route, Switch } from 'react-router-dom';
 
