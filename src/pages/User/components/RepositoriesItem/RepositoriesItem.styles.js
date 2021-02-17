@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { CollectionItem } from "react-materialize";
+import styled from 'styled-components';
+import { CollectionItem } from 'react-materialize';
 
 export const CollectionItemStyled = styled(CollectionItem)`
   display: flex;

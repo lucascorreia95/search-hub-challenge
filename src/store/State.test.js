@@ -1,25 +1,25 @@
-import StateReducer from "./State";
-import { DispatchTypes } from "./types";
-import { initialState } from "./index";
+import StateReducer from './State';
+import { DispatchTypes } from './types';
+import { initialState } from './index';
 
-describe("State store", () => {
-  it("Should return state with search params", () => {
+describe('State store', () => {
+  it('Should return state with search params', () => {
     const fakeAction = {
       type: DispatchTypes.SearchParams,
-      payload: { inputValue: "test", radioValue: "users" },
+      payload: { inputValue: 'test', radioValue: 'users' },
     };
 
     const returnValue = StateReducer(fakeAction);
 
     expect(returnValue).toEqual(
       expect.objectContaining({
-        inputValue: "test",
-        radioValue: "users",
+        inputValue: 'test',
+        radioValue: 'users',
       })
     );
   });
 
-  it("Should return state with new page value", () => {
+  it('Should return state with new page value', () => {
     const fakeAction = {
       type: DispatchTypes.Page,
       payload: { page: 2 },
@@ -29,16 +29,16 @@ describe("State store", () => {
 
     expect(returnValue).toEqual(
       expect.objectContaining({
-        inputValue: "",
-        radioValue: "users",
+        inputValue: '',
+        radioValue: 'users',
         page: 2,
       })
     );
   });
 
-  it("Should return current state when type is invalid", () => {
+  it('Should return current state when type is invalid', () => {
     const fakeAction = {
-      type: "invalid_type",
+      type: 'invalid_type',
       payload: { page: 2 },
     };
 

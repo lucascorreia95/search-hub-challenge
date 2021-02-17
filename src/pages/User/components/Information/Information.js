@@ -1,6 +1,6 @@
-import { memo } from "react";
-import PropTypes from "prop-types";
-import { Title, Description } from "./Information.styles";
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import { Title, Description } from './Information.styles';
 
 export const Information = ({ title, description, fontSize }) => {
   if (!description) {
@@ -22,7 +22,9 @@ Information.propTypes = {
 };
 
 Information.defaultProps = {
-  fontSize: "normal",
+  fontSize: 'normal',
+  title: '',
+  description: '',
 };
 
 export default memo(Information);

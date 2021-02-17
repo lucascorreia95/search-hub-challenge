@@ -1,9 +1,9 @@
-import { DispatchTypes } from "./types";
+import { DispatchTypes } from './types';
 
 export const initialState = {
-  inputValue: "",
+  inputValue: '',
   page: 1,
-  radioValue: "users",
+  radioValue: 'users',
 };
 
 export const StateReducer = (action, state = initialState) => {

@@ -1,13 +1,11 @@
-import Result from "./components/Result";
-import SearchForm from "./components/SearchForm";
+import Result from './components/Result';
+import SearchForm from './components/SearchForm';
 
-export const Search = () => {
-  return (
-    <>
-      <SearchForm />
-      <Result />
-    </>
-  );
-};
+export const Search = () => (
+  <>
+    <SearchForm />
+    <Result />
+  </>
+);
 
 export default Search;

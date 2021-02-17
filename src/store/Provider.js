@@ -1,9 +1,10 @@
-import { useReducer } from "react";
+import { useReducer } from 'react';
+import PropTypes from 'prop-types';
 
-import Context from "./Context";
-import StateReducer, { initialState } from "./State";
+import Context from './Context';
+import StateReducer, { initialState } from './State';
 
-export const DocumentoProvider = ({ children, ...props }) => {
+export const StoreProvider = ({ children, ...props }) => {
   const [state, dispatch] = useReducer(
     (reducerState, action) => StateReducer(action, reducerState),
     initialState
@@ -16,4 +17,8 @@ export const DocumentoProvider = ({ children, ...props }) => {
   );
 };
 
-export default DocumentoProvider;
+StoreProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default StoreProvider;

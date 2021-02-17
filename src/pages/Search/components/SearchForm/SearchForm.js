@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { TextInput, Button, Icon, RadioGroup } from "react-materialize";
+import { useState } from 'react';
+import { TextInput, Button, Icon, RadioGroup } from 'react-materialize';
 
-import githubImg from "../../../../asset/img/github-mark.png";
-import { DispatchTypes, useRootContext } from "../../../../store";
+import githubImg from '../../../../asset/img/github-mark.png';
+import { DispatchTypes, useRootContext } from '../../../../store';
 
-import { Container, Image, RadioContainer } from "./SearchForm.styles";
+import { Container, Image, RadioContainer } from './SearchForm.styles';
 
 export const SearchForm = () => {
   const { state, dispatch } = useRootContext();
-  const [inputValue, setInputValue] = useState(state.inputValue || "");
+  const [inputValue, setInputValue] = useState(state.inputValue || '');
   const [radioValue, setRadioValue] = useState(state.radioValue);
 
   const handleClickSearchButton = () =>
@@ -34,12 +34,12 @@ export const SearchForm = () => {
         <RadioGroup
           options={[
             {
-              label: "Usuários",
-              value: "users",
+              label: 'Usuários',
+              value: 'users',
             },
             {
-              label: "Repositórios",
-              value: "repositories",
+              label: 'Repositórios',
+              value: 'repositories',
             },
           ]}
           value={radioValue}

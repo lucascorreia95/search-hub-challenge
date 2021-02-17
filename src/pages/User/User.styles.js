@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Button } from "react-materialize";
+import styled from 'styled-components';
+import { Button } from 'react-materialize';
 
 export const Title = styled.h1`
   position: absolute;

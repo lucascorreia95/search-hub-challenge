@@ -1,20 +1,20 @@
-import { memo } from "react";
-import PropTypes from "prop-types";
-import { useHistory, Link } from "react-router-dom";
-import { Button, Col, Card, CardTitle } from "react-materialize";
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import { useHistory, Link } from 'react-router-dom';
+import { Button, Col, Card, CardTitle } from 'react-materialize';
 
-import { DescriptionContainer } from "./ResultItem.styles";
+import { DescriptionContainer } from './ResultItem.styles';
 
 export const ResultItem = ({ item, type }) => {
   const history = useHistory();
 
   const handleDetailsClick = (login) =>
     history.push({
-      pathname: "/user/" + login,
+      pathname: `/user/${login}`,
       params: login,
     });
 
-  if (type === "repositories") {
+  if (type === 'repositories') {
     return (
       <Col key={item.id} xl={3} l={4} m={6} s={12}>
         <Card
@@ -28,7 +28,7 @@ export const ResultItem = ({ item, type }) => {
             <Link
               key={2}
               to={{
-                pathname: "/user/" + item.owner.login,
+                pathname: `/user/${item.owner.login}`,
                 params: item.owner.login,
               }}
             >
@@ -62,7 +62,7 @@ export const ResultItem = ({ item, type }) => {
 
 ResultItem.propTypes = {
   item: PropTypes.object.isRequired,
-  type: PropTypes.oneOf(["users", "repositories"]).isRequired,
+  type: PropTypes.oneOf(['users', 'repositories']).isRequired,
 };
 
 export default memo(ResultItem);

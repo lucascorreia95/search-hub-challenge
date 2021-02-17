@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import { Parallax, Icon, Preloader } from "react-materialize";
+import { useEffect, useState } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
+import { Parallax, Icon, Preloader } from 'react-materialize';
 
-import api from "../../services/github";
-import Information from "./components/Information";
-import Repositories from "./components/Repositories";
+import api from '../../services/github';
+import Information from './components/Information';
+import Repositories from './components/Repositories';
 
 import {
   Title,
@@ -15,11 +15,11 @@ import {
   UserContainer,
   LoadingContainer,
   Text,
-} from "./User.styles";
+} from './User.styles';
 
 export const User = () => {
-  let { login } = useParams();
-  let { goBack } = useHistory();
+  const { login } = useParams();
+  const { goBack } = useHistory();
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
 
@@ -27,7 +27,7 @@ export const User = () => {
     const getUser = async () => {
       setIsLoading(true);
 
-      const response = await api.get("/users/" + login);
+      const response = await api.get(`/users/${login}`);
 
       setUser(response.data);
       setIsLoading(false);

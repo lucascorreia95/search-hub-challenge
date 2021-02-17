@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import parse from "parse-link-header";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import parse from 'parse-link-header';
 import {
   Modal,
   Button,
@@ -10,12 +10,12 @@ import {
   Icon,
   Pagination,
   Preloader,
-} from "react-materialize";
+} from 'react-materialize';
 
-import RepositoriesItem from "../RepositoriesItem";
-import api from "../../../../services/github";
+import RepositoriesItem from '../RepositoriesItem';
+import api from '../../../../services/github';
 
-import { LoadingContainer, Text } from "./Repositories.styles";
+import { LoadingContainer, Text } from './Repositories.styles';
 
 export const Repositories = ({
   login,
@@ -71,7 +71,7 @@ export const Repositories = ({
       open={false}
       options={{
         dismissible: true,
-        endingTop: "10%",
+        endingTop: '10%',
         inDuration: 250,
         onCloseEnd: null,
         onCloseStart: null,
@@ -80,7 +80,7 @@ export const Repositories = ({
         opacity: 0.5,
         outDuration: 250,
         preventScrolling: true,
-        startingTop: "4%",
+        startingTop: '4%',
       }}
       trigger={<Button node="button">{trigger}</Button>}
     >
@@ -129,6 +129,8 @@ Repositories.propTypes = {
 
 Repositories.defaultProps = {
   showOwner: false,
+  header: '',
+  trigger: '',
 };
 
 export default Repositories;

@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import parse from "parse-link-header";
-import { Row, Pagination, Icon, Preloader } from "react-materialize";
+import { useEffect, useState } from 'react';
+import parse from 'parse-link-header';
+import { Row, Pagination, Icon, Preloader } from 'react-materialize';
 
-import api from "../../../../services/github";
-import { useRootContext, DispatchTypes } from "../../../../store";
-import ResultItem from "../ResultItem";
+import api from '../../../../services/github';
+import { useRootContext, DispatchTypes } from '../../../../store';
+import ResultItem from '../ResultItem';
 
-import { Container, LoadingContainer, Text } from "./Result.styles";
+import { Container, LoadingContainer, Text } from './Result.styles';
 
 export const Result = () => {
   const { state, dispatch } = useRootContext();
@@ -27,7 +27,7 @@ export const Result = () => {
     const getResults = async () => {
       setIsLoading(true);
 
-      const { data, headers } = await api.get("search/" + state.radioValue, {
+      const { data, headers } = await api.get(`search/${state.radioValue}`, {
         params: {
           q: state.inputValue,
           page: state.page,
