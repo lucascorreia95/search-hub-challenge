@@ -6,7 +6,7 @@ import api from "../../../../services/github";
 import { useRootContext, DispatchTypes } from "../../../../store";
 import ResultItem from "../ResultItem";
 
-import { Container, LoadingContainer } from "./Result.styles";
+import { Container, LoadingContainer, Text } from "./Result.styles";
 
 export const Result = () => {
   const { state, dispatch } = useRootContext();
@@ -62,13 +62,23 @@ export const Result = () => {
     );
   }
 
+  if (results.items.length === 0) {
+    return (
+      <Container>
+        <Icon large center>
+          search_off
+        </Icon>
+        <Text>Sua busca não retornou resultados!</Text>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <Row>
-        {results.items.length > 0 &&
-          results.items.map((item) => (
-            <ResultItem key={item.id} item={item} type={results.type} />
-          ))}
+        {results.items.map((item) => (
+          <ResultItem key={item.id} item={item} type={results.type} />
+        ))}
       </Row>
       <Pagination
         activePage={state.page}
