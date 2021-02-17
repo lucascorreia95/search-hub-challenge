@@ -7,12 +7,14 @@ const User = lazy(() => import('./pages/User'));
 export const Routes = () => (
   <BrowserRouter>
     <Switch>
+      {/* <HashRouter basename="/"> */}
       <Suspense fallback={<div />}>
-        <Route path="/" exact component={Search} />
-        <Route path="/user/:login">
+        <Route path="/search-hub-challenge" exact component={Search} />
+        <Route path="/search-hub-challenge/user/:login">
           <User />
         </Route>
       </Suspense>
+      {/* </HashRouter> */}
     </Switch>
   </BrowserRouter>
 );

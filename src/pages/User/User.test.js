@@ -26,12 +26,12 @@ const userMock = {
 const renderComponent = () =>
   render(
     <ThemeProvider theme={theme}>
-      <MemoryRouter initialEntries={['/user/lucas']}>
+      <MemoryRouter initialEntries={['/search-hub-challenge/user/lucas']}>
         <Switch>
-          <Route path="/user/:login">
+          <Route path="/search-hub-challenge/user/:login">
             <User />
           </Route>
-          <Route path="/">
+          <Route path="/search-hub-challenge">
             <div>Another page</div>
           </Route>
         </Switch>
@@ -104,14 +104,14 @@ describe('Users page', () => {
       <ThemeProvider theme={theme}>
         <Router history={history}>
           <Switch>
-            <Route path="/user/:login">
+            <Route path="/search-hub-challenge/user/:login">
               <User />
             </Route>
             <Route path="/">
               <div>Another page</div>
               <Link
                 to={{
-                  pathname: '/user/lucas',
+                  pathname: '/search-hub-challenge/user/lucas',
                   params: 'lucas',
                 }}
               >

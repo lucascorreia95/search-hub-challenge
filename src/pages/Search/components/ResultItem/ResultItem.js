@@ -10,7 +10,7 @@ export const ResultItem = ({ item, type }) => {
 
   const handleDetailsClick = (login) =>
     history.push({
-      pathname: `/user/${login}`,
+      pathname: `/search-hub-challenge/user/${login}`,
       params: login,
     });
 
@@ -28,7 +28,7 @@ export const ResultItem = ({ item, type }) => {
             <Link
               key={2}
               to={{
-                pathname: `/user/${item.owner.login}`,
+                pathname: `/search-hub-challenge/user/${item.owner.login}`,
                 params: item.owner.login,
               }}
             >
