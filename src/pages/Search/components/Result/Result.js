@@ -58,6 +58,7 @@ export const Result = () => {
     return (
       <LoadingContainer>
         <Preloader active color="blue" flashing={false} size="big" />
+        <Text>Buscando resultados...</Text>
       </LoadingContainer>
     );
   }

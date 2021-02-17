@@ -12,6 +12,7 @@ export const LoadingContainer = styled.div`
   padding: 15px;
   box-sizing: border-box;
   display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   flex: 1;

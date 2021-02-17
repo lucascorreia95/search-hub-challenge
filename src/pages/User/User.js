@@ -14,6 +14,7 @@ import {
   ButtonStyled,
   UserContainer,
   LoadingContainer,
+  Text,
 } from "./User.styles";
 
 export const User = () => {
@@ -43,6 +44,7 @@ export const User = () => {
     return (
       <LoadingContainer>
         <Preloader active color="blue" flashing={false} size="big" />
+        <Text>Buscando usuário...</Text>
       </LoadingContainer>
     );
   }
