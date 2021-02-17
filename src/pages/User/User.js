@@ -36,10 +36,6 @@ export const User = () => {
     getUser();
   }, [login]);
 
-  if (!isLoading && !user) {
-    return null;
-  }
-
   if (isLoading) {
     return (
       <LoadingContainer>
