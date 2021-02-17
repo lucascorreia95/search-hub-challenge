@@ -15,7 +15,7 @@ import {
 import RepositoriesItem from "../RepositoriesItem";
 import api from "../../../../services/github";
 
-import { LoadingContainer } from "./Repositories.styles";
+import { LoadingContainer, Text } from "./Repositories.styles";
 
 export const Repositories = ({
   login,
@@ -25,7 +25,7 @@ export const Repositories = ({
   showOwner,
 }) => {
   const [repositories, setRepositories] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [pageSize] = useState(10);
   const [totalPages, setTotalPages] = useState(1);
@@ -87,6 +87,7 @@ export const Repositories = ({
       {isLoading && (
         <LoadingContainer>
           <Preloader active color="blue" flashing={false} size="big" />
+          <Text>Buscando items...</Text>
         </LoadingContainer>
       )}
       {repositories && !isLoading && (
