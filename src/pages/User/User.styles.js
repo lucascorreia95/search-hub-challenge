@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Button } from 'react-materialize';
 
+export const Header = styled.header``;
+
 export const Title = styled.h1`
   position: absolute;
   top: 0;
@@ -23,7 +25,7 @@ export const ButtonStyled = styled(Button)`
   background-color: ${(props) => props.theme.colors.grey};
 `;
 
-export const UserContainer = styled.div`
+export const UserContainer = styled.section`
   flex: 1;
 `;
 
@@ -35,11 +37,11 @@ export const ContainerButtons = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Container = styled.div`
+export const Container = styled.article`
   padding: 15px;
 `;
 
-export const LoadingContainer = styled.div`
+export const LoadingContainer = styled.section`
   padding: 15px;
   box-sizing: border-box;
   display: flex;

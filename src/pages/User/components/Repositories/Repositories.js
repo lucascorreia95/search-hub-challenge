@@ -15,7 +15,7 @@ import {
 import RepositoriesItem from '../RepositoriesItem';
 import api from '../../../../services/github';
 
-import { LoadingContainer, Text } from './Repositories.styles';
+import { LoadingContainer, Text, Container } from './Repositories.styles';
 
 export const Repositories = ({
   login,
@@ -91,7 +91,7 @@ export const Repositories = ({
         </LoadingContainer>
       )}
       {repositories && !isLoading && (
-        <>
+        <Container>
           <Row>
             <Col s={12}>
               <Collection>
@@ -113,7 +113,7 @@ export const Repositories = ({
             rightBtn={<Icon>chevron_right</Icon>}
             onSelect={(newPage) => setPage(newPage)}
           />
-        </>
+        </Container>
       )}
     </Modal>
   );

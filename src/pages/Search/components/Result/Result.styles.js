@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   padding: 15px;
   box-sizing: border-box;
   flex: 1;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   text-align: center;
 `;
 
-export const LoadingContainer = styled.div`
+export const LoadingContainer = styled.section`
   padding: 15px;
   box-sizing: border-box;
   display: flex;

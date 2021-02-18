@@ -15,6 +15,7 @@ import {
   UserContainer,
   LoadingContainer,
   Text,
+  Header,
 } from './User.styles';
 
 export const User = () => {
@@ -47,17 +48,18 @@ export const User = () => {
 
   return (
     <UserContainer>
-      <ButtonStyled
-        flat
-        node="button"
-        waves="light"
-        icon={<Icon>arrow_back</Icon>}
-        onClick={() => goBack()}
-      >
-        Voltar
-      </ButtonStyled>
-      <Title>{user.name}</Title>
-
+      <Header>
+        <ButtonStyled
+          flat
+          node="button"
+          waves="light"
+          icon={<Icon>arrow_back</Icon>}
+          onClick={() => goBack()}
+        >
+          Voltar
+        </ButtonStyled>
+        <Title>{user.name}</Title>
+      </Header>
       <ParallaxContainer>
         <Parallax
           image={<img alt="Avatar" src={user.avatar_url} />}

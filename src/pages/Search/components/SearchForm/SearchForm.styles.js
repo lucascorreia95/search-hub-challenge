@@ -1,6 +1,20 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Header = styled.header``;
+
+export const Figure = styled.figure``;
+
+export const Form = styled.form`
+  display: flex;
+  flex-flow: column;
+`;
+
+export const Title = styled.h1`
+  text-align: center;
+  font-size: 3rem;
+`;
+
+export const Container = styled.section`
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -24,5 +38,6 @@ export const RadioContainer = styled.div`
 
 export const Image = styled.img`
   max-width: 25%;
-  margin: 0 auto 15px auto;
+  margin: 0 auto;
+  display: block;
 `;

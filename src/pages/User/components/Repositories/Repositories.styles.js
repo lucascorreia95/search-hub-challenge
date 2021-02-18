@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const LoadingContainer = styled.div`
+export const Container = styled.section``;
+
+export const LoadingContainer = styled.section`
   padding: 15px;
   box-sizing: border-box;
   display: flex;
