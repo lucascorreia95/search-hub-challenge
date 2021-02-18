@@ -5,11 +5,11 @@ const Search = lazy(() => import('./pages/Search'));
 const User = lazy(() => import('./pages/User'));
 
 export const Routes = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/search-hub-challenge">
     <Switch>
       <Suspense fallback={<div />}>
-        <Route path="/search-hub-challenge" exact component={Search} />
-        <Route path="/search-hub-challenge/user/:login">
+        <Route path="/" exact component={Search} />
+        <Route path="/user/:login">
           <User />
         </Route>
       </Suspense>

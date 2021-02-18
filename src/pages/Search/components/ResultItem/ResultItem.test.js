@@ -35,7 +35,7 @@ const renderComponent = (props) => {
           <ResultItem {...propsMock} />
         </Route>
 
-        <Route path="/search-hub-challenge/user/:login">
+        <Route path="/user/:login">
           <div>Users Page</div>
         </Route>
       </Switch>
@@ -165,7 +165,7 @@ describe('ResultItem component', () => {
     expect(repositoryLink).toBeInTheDocument();
     expect(repositoryLink).toHaveAttribute(
       'href',
-      `/search-hub-challenge/user/${itemPropMock.owner.login}`
+      `/user/${itemPropMock.owner.login}`
     );
   });
 });
