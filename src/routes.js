@@ -5,7 +5,7 @@ const Search = lazy(() => import('./pages/Search'));
 const User = lazy(() => import('./pages/User'));
 
 export const Routes = () => (
-  <BrowserRouter basename="/search-hub-challenge">
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
       <Suspense fallback={<div />}>
         <Route path="/" exact component={Search} />
