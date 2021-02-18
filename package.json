@@ -1,7 +1,13 @@
 {
   "name": "search-hub-challenge",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "author": "Lucas Correia <lucascorreiaemail@gmail.com> (https://www.linkedin.com/in/lucascorreia-95/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucascorreia95/search-hub-challenge"
+  },
   "homepage": "https://lucascorreia95.github.io/search-hub-challenge/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
