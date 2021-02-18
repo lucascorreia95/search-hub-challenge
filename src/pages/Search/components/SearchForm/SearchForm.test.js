@@ -81,6 +81,21 @@ describe('SearchForm component', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
+  it('Should not dispatch search params to the context when there is no text value', () => {
+    const spyDispatch = jest.fn();
+
+    const { container } = renderComponent(spyDispatch);
+    expect(container.firstChild).toBeInTheDocument();
+
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+
+    expect(spyDispatch).not.toHaveBeenCalled();
+    expect(
+      screen.getByText('Digite algum texto para sua busca!')
+    ).toBeInTheDocument();
+  });
+
   it('Should dispatch search params to the context', () => {
     const spyDispatch = jest.fn();
 

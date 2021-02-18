@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { TextInput, Button, Icon, RadioGroup } from 'react-materialize';
+import M from 'materialize-css';
 
 import githubImg from '../../../../asset/img/github-mark.png';
 import { DispatchTypes, useRootContext } from '../../../../store';
@@ -20,7 +21,12 @@ export const SearchForm = () => {
   const [inputValue, setInputValue] = useState(state.inputValue || '');
   const [radioValue, setRadioValue] = useState(state.radioValue);
 
-  const handleClickSearchButton = () =>
+  const handleClickSearchButton = () => {
+    if (!inputValue) {
+      M.toast({ html: 'Digite algum texto para sua busca!' });
+      return;
+    }
+
     dispatch({
       type: DispatchTypes.SearchParams,
       payload: {
@@ -28,6 +34,7 @@ export const SearchForm = () => {
         radioValue,
       },
     });
+  };
 
   return (
     <Container>
