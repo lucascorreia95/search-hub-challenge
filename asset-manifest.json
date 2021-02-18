@@ -3,17 +3,17 @@
     "static/js/0.d600bd38.chunk.js": "/search-hub-challenge/static/js/0.d600bd38.chunk.js",
     "static/js/0.d600bd38.chunk.js.map": "/search-hub-challenge/static/js/0.d600bd38.chunk.js.map",
     "main.css": "/search-hub-challenge/static/css/main.ea176268.chunk.css",
-    "main.js": "/search-hub-challenge/static/js/main.527bd971.chunk.js",
-    "main.js.map": "/search-hub-challenge/static/js/main.527bd971.chunk.js.map",
-    "runtime-main.js": "/search-hub-challenge/static/js/runtime-main.09712382.js",
-    "runtime-main.js.map": "/search-hub-challenge/static/js/runtime-main.09712382.js.map",
+    "main.js": "/search-hub-challenge/static/js/main.2c782f2f.chunk.js",
+    "main.js.map": "/search-hub-challenge/static/js/main.2c782f2f.chunk.js.map",
+    "runtime-main.js": "/search-hub-challenge/static/js/runtime-main.babbca89.js",
+    "runtime-main.js.map": "/search-hub-challenge/static/js/runtime-main.babbca89.js.map",
     "static/css/3.0ba96f5c.chunk.css": "/search-hub-challenge/static/css/3.0ba96f5c.chunk.css",
     "static/js/3.24fdf585.chunk.js": "/search-hub-challenge/static/js/3.24fdf585.chunk.js",
     "static/js/3.24fdf585.chunk.js.map": "/search-hub-challenge/static/js/3.24fdf585.chunk.js.map",
-    "static/js/4.9f8f48b6.chunk.js": "/search-hub-challenge/static/js/4.9f8f48b6.chunk.js",
-    "static/js/4.9f8f48b6.chunk.js.map": "/search-hub-challenge/static/js/4.9f8f48b6.chunk.js.map",
-    "static/js/5.e7771b14.chunk.js": "/search-hub-challenge/static/js/5.e7771b14.chunk.js",
-    "static/js/5.e7771b14.chunk.js.map": "/search-hub-challenge/static/js/5.e7771b14.chunk.js.map",
+    "static/js/4.7b8c14f0.chunk.js": "/search-hub-challenge/static/js/4.7b8c14f0.chunk.js",
+    "static/js/4.7b8c14f0.chunk.js.map": "/search-hub-challenge/static/js/4.7b8c14f0.chunk.js.map",
+    "static/js/5.4b35f6ce.chunk.js": "/search-hub-challenge/static/js/5.4b35f6ce.chunk.js",
+    "static/js/5.4b35f6ce.chunk.js.map": "/search-hub-challenge/static/js/5.4b35f6ce.chunk.js.map",
     "index.html": "/search-hub-challenge/index.html",
     "static/css/3.0ba96f5c.chunk.css.map": "/search-hub-challenge/static/css/3.0ba96f5c.chunk.css.map",
     "static/css/main.ea176268.chunk.css.map": "/search-hub-challenge/static/css/main.ea176268.chunk.css.map",
@@ -22,10 +22,10 @@
     "static/media/github-mark.c8007a9f.png": "/search-hub-challenge/static/media/github-mark.c8007a9f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.09712382.js",
+    "static/js/runtime-main.babbca89.js",
     "static/css/3.0ba96f5c.chunk.css",
     "static/js/3.24fdf585.chunk.js",
     "static/css/main.ea176268.chunk.css",
-    "static/js/main.527bd971.chunk.js"
+    "static/js/main.2c782f2f.chunk.js"
   ]
 }
