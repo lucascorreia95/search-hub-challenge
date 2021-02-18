@@ -3,6 +3,8 @@ import { Button } from 'react-materialize';
 
 export const Header = styled.header``;
 
+export const Main = styled.main``;
+
 export const Title = styled.h1`
   position: absolute;
   top: 0;
@@ -25,7 +27,7 @@ export const ButtonStyled = styled(Button)`
   background-color: ${(props) => props.theme.colors.grey};
 `;
 
-export const UserContainer = styled.section`
+export const UserContainer = styled.div`
   flex: 1;
 `;
 

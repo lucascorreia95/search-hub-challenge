@@ -12,6 +12,7 @@ import {
   Title,
   Figure,
   Form,
+  Main,
 } from './SearchForm.styles';
 
 export const SearchForm = () => {
@@ -36,41 +37,43 @@ export const SearchForm = () => {
           <Image src={githubImg} alt="Github logo" />
         </Figure>
       </Header>
-      <Form onSubmit={(event) => event.preventDefault()}>
-        <TextInput
-          id="TextInput-4"
-          label="Digite um texto para a sua busca!"
-          autoComplete="off"
-          value={inputValue}
-          onChange={({ target }) => setInputValue(target.value)}
-        />
-        <RadioContainer>
-          <RadioGroup
-            options={[
-              {
-                label: 'Usuários',
-                value: 'users',
-              },
-              {
-                label: 'Repositórios',
-                value: 'repositories',
-              },
-            ]}
-            value={radioValue}
-            onChange={({ target }) => setRadioValue(target.value)}
-            withGap
+      <Main>
+        <Form onSubmit={(event) => event.preventDefault()}>
+          <TextInput
+            id="TextInput-4"
+            label="Digite um texto para a sua busca!"
+            autoComplete="off"
+            value={inputValue}
+            onChange={({ target }) => setInputValue(target.value)}
           />
-        </RadioContainer>
-        <Button
-          node="button"
-          type="submit"
-          waves="light"
-          onClick={handleClickSearchButton}
-        >
-          Buscar
-          <Icon right>search</Icon>
-        </Button>
-      </Form>
+          <RadioContainer>
+            <RadioGroup
+              options={[
+                {
+                  label: 'Usuários',
+                  value: 'users',
+                },
+                {
+                  label: 'Repositórios',
+                  value: 'repositories',
+                },
+              ]}
+              value={radioValue}
+              onChange={({ target }) => setRadioValue(target.value)}
+              withGap
+            />
+          </RadioContainer>
+          <Button
+            node="button"
+            type="submit"
+            waves="light"
+            onClick={handleClickSearchButton}
+          >
+            Buscar
+            <Icon right>search</Icon>
+          </Button>
+        </Form>
+      </Main>
     </Container>
   );
 };

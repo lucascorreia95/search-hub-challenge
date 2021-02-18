@@ -16,6 +16,7 @@ import {
   LoadingContainer,
   Text,
   Header,
+  Main,
 } from './User.styles';
 
 export const User = () => {
@@ -60,45 +61,47 @@ export const User = () => {
         </ButtonStyled>
         <Title>{user.name}</Title>
       </Header>
-      <ParallaxContainer>
-        <Parallax
-          image={<img alt="Avatar" src={user.avatar_url} />}
-          options={{
-            responsiveThreshold: 0,
-          }}
-        />
-      </ParallaxContainer>
+      <Main>
+        <ParallaxContainer>
+          <Parallax
+            image={<img alt="Avatar" src={user.avatar_url} />}
+            options={{
+              responsiveThreshold: 0,
+            }}
+          />
+        </ParallaxContainer>
 
-      <Container>
-        <Information title="Login" description={user.login} />
-        <Information title="Biografia" description={user.bio} />
-        <Information title="Local" description={user.location} />
-        <Information title="Empresa" description={user.company} />
-        <Information title="Blog" description={user.blog} />
-        <Information title="E-mail" description={user.email} />
-        <Information
-          title="Número de seguidores"
-          description={user.followers}
-        />
-        <Information title="Seguindo" description={user.following} />
+        <Container>
+          <Information title="Login" description={user.login} />
+          <Information title="Biografia" description={user.bio} />
+          <Information title="Local" description={user.location} />
+          <Information title="Empresa" description={user.company} />
+          <Information title="Blog" description={user.blog} />
+          <Information title="E-mail" description={user.email} />
+          <Information
+            title="Número de seguidores"
+            description={user.followers}
+          />
+          <Information title="Seguindo" description={user.following} />
 
-        <ContainerButtons>
+          <ContainerButtons>
+            <Repositories
+              login={login}
+              endpoint="repos"
+              trigger="Ver repositórios do usuário"
+              header="Lista de repositórios do usuário"
+            />
+          </ContainerButtons>
+
           <Repositories
             login={login}
-            endpoint="repos"
-            trigger="Ver repositórios do usuário"
-            header="Lista de repositórios do usuário"
+            endpoint="starred"
+            trigger="Ver repositórios marcados com estrela"
+            header="Lista de repositórios marcados com estrela pelo usuário"
+            showOwner
           />
-        </ContainerButtons>
-
-        <Repositories
-          login={login}
-          endpoint="starred"
-          trigger="Ver repositórios marcados com estrela"
-          header="Lista de repositórios marcados com estrela pelo usuário"
-          showOwner
-        />
-      </Container>
+        </Container>
+      </Main>
     </UserContainer>
   );
 };

@@ -4,6 +4,8 @@ export const Header = styled.header``;
 
 export const Figure = styled.figure``;
 
+export const Main = styled.main``;
+
 export const Form = styled.form`
   display: flex;
   flex-flow: column;
@@ -14,7 +16,7 @@ export const Title = styled.h1`
   font-size: 3rem;
 `;
 
-export const Container = styled.section`
+export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: column;
