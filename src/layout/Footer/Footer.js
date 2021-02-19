@@ -14,7 +14,7 @@ export const Footer = () => (
       </Link>
       - FEV./2021 -
       <Link
-        href="https://github.com/lucascorreia95/search-hub-callenge"
+        href="https://github.com/lucascorreia95/search-hub-challenge"
         target="_blank"
         rel="noreferrer"
         data-testid="footer-link-repository"
